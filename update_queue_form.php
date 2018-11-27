@@ -3,7 +3,7 @@
 
       $booking_id = $_GET['booking_id'];
 
-      $qbook = "SELECT * FROM booking LEFT JOIN province ON booking.province=province.province_id LEFT JOIN booking_time ON booking.time_id=booking_time.time_id  WHERE booking_id='$booking_id' ";
+      $qbook = "SELECT * FROM booking LEFT JOIN province ON booking.province=province.province_id   WHERE booking_id='$booking_id' ";
 
       $resbook = mysqli_query($dbcon, $qbook);
       $rowbook = mysqli_fetch_array($resbook, MYSQLI_ASSOC);
@@ -273,12 +273,9 @@
 
 
        <label>เวลา </label>
-        <?php
-            $q = "SELECT * FROM booking_time";
-            $result = mysqli_query($dbcon, $q);
-         ?>
-        <select name="time_id" id="time_id">
-          <option value="<?php echo $rowbook['time_id']; ?>"><?php echo $rowbook['time']; ?></option>
+       
+        <select name="time" id="time">
+          <option value="<?php echo $rowbook['time']; ?>"><?php echo $rowbook['time']; ?></option>
           <?php
                 while ($row = mysqli_fetch_array($result, MYSQLI_NUM)){
                   if ($row['0']==$rowbook['booking_id']) {

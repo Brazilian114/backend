@@ -30,8 +30,8 @@
         $result = mysqli_query($dbcon, $q);
 
         if ($result) {
-          echo "OK";
-          echo "<a href='promo.php'>แสดงข้อมูล</a>";
+          echo '<script>alert("เพิ่มข้อมูลเรียบร้อย")</script>';
+    echo '<script>window.location="promo.php"</script>';
         } else {
           echo "NO".mysqli_error($dbcon);
         }

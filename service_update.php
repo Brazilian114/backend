@@ -1,25 +1,20 @@
 <?php
     require 'connectdb.php';
 
-    $manual_id = $_POST['manual_id'];
-    $manual_img = $_POST['manual_img'];
-    $manual_caption = $_POST['manual_caption'];
-    $manual_head = $_POST['manual_head'];
-    $manual_content = $_POST['manual_content'];
-    $manual_footer = $_POST['manual_footer'];
+    $booking_service_id = $_POST['booking_service_id'];
+    $service_name = $_POST['service_name'];
+    $service_price = $_POST['service_price'];
 
 
 
-    $q = "UPDATE manual SET manual_img='$manual_img', manual_caption='$manual_caption', manual_head='$manual_head', manual_content='$manual_content' , manual_footer='$manual_footer'
-          WHERE manual_id='$manual_id' ";
+    $q = "UPDATE booking_service SET service_name='$service_name', service_price='$service_price' WHERE booking_service_id='$booking_service_id' ";
 
     $result = mysqli_query($dbcon, $q);
 
     if($result) {
 
-      echo "แก้ไขเรียบร้อย";
-      echo "<hr>";
-      echo"<a href='manual_table.php'>แสดงข้อบริการ</a>";
+      echo '<script>alert("แก้ไขข้อมูลรียบร้อย")</script>';
+      echo '<script>window.location="service_table.php"</script>';
 
     } else {
 
@@ -27,3 +22,4 @@
     }
 
     mysqli_close($dbcon);
+?>

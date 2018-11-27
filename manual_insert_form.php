@@ -1,6 +1,8 @@
 <?php
     require 'connectdb.php';
-    $type = "1";
+
+     $type = "1";
+
 ?>
 
 <!DOCTYPE html>
@@ -257,3 +259,5 @@
 </body>
 
 </html>
+
+

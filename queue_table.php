@@ -5,7 +5,7 @@
 //    $q = "SELECT * FROM quese_walkin LEFT JOIN status_type ON quese_walkin.q_status=status_type.status_id LEFT JOIN county_category ON quese_walkin.user_car_county=county_category.county_id";
 //    $result = mysqli_query($dbcon, $q);
 
-    $q = "SELECT * FROM booking LEFT JOIN province ON booking.province=province.province_id LEFT JOIN booking_time ON booking.time_id=booking_time.time_id LEFT JOIN status ON booking.status_id=status.status_id LEFT JOIN user_type ON booking.user_type=user_type.type_id";
+    $q = "SELECT * FROM booking LEFT JOIN province ON booking.province=province.province_id LEFT JOIN status ON booking.status_id=status.status_id LEFT JOIN user_type ON booking.user_type=user_type.type_id";
     $result = mysqli_query($dbcon, $q);
 ?>
 

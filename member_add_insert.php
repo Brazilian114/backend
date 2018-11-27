@@ -18,8 +18,8 @@
         $result = mysqli_query($dbcon, $q);
 
         if ($result) {
-          echo "OK";
-          echo "<a href='member_table.php'>แสดงข้อมูล</a>";
+          echo '<script>alert("เพิ่มลูกค้าเรียบร้อย")</script>';
+          echo '<script>window.location="member_table.php"</script>';
         } else {
           echo "NO".mysqli_error($dbcon);
         }

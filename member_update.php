@@ -15,9 +15,8 @@ $q = "UPDATE customer SET username='$username', license='$license', province='$p
     $result = mysqli_query($dbcon, $q);
     
      if($result){
-        echo "แก้ไขเรียบร้อย";
-        echo "<hr>";
-        echo "<a href='member_table.php'>กลับไปยังหน้าข้อมูลลูกค้า</a>";
+      echo '<script>alert("แก้ไขข้อมูลเรียบร้อย")</script>';
+      echo '<script>window.location="member_table.php"</script>';
       }else{
         echo "เกิดข้อผิดพลาด".mysqli_error($dbcon);
       }

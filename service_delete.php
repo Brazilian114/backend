@@ -5,8 +5,8 @@
     $result = mysqli_query($dbcon, $q);
 
     if($result){
-      echo "ลบสำเร็จ";
-      echo "<a href='queue_table.php'>ดูข้อมูล</a>";
+      echo '<script>alert("ลบข้อมูลคิวเรียบร้อย")</script>';
+    echo '<script>window.location="service_table.php"</script>';
 
     }else {
        echo "ผิดพลาด".mysqli_error($dbcon);

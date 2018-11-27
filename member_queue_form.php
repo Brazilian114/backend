@@ -266,20 +266,46 @@
 
         <label>โทร: </label><input type="text" name="tel" id="tel" size="30" value="<?php echo $rowuser['tel'];?>">
 
+        
         <label>เวลา </label>
-        <?php
-            $q = "SELECT * FROM booking_time";
-            $result = mysqli_query($dbcon, $q);
-         ?>
-        <select name="time_id" id="time_id">
-          <option value="">---เลือกเวลา----</option>
-          <?php
-                while ($row = mysqli_fetch_array($result, MYSQLI_NUM)){
-                  echo "<option value='$row[0]'>$row[1]</option>";
-                }
-          ?>
-        </select>
+<?php
+          date_default_timezone_set('Asia/Bangkok');
+           //print_r ( localtime ( time(), true ) );
 
+           $Dt = new \DateTime();
+           $hour = $Dt->format('H');
+           $minute = $Dt->format('i');
+           $second = $Dt->format('s');
+           $endHour = '19';
+
+
+          ?>
+
+
+
+          <?php
+           if($second > 0 || $minute > 0)
+           {
+              $Dt->setTime($hour, '0', '0');
+              $Dt->add(new \DateInterval('PT1H'));
+            }
+          ?>
+
+
+          <select name="time"id="time">
+            <option value="">---เลือกเวลา----</option>
+         <option>
+          <?php
+            for ($i= $Dt->format('H'); $i <= $endHour; $i++)
+            {
+              echo $Dt->format('H:i:s') . '<option>' . PHP_EOL;
+              $Dt->add(new \DateInterval('PT1H'));
+
+            }
+
+           ?>
+         </option>
+         </select>
 
 
 

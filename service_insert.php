@@ -16,8 +16,8 @@
         $result = mysqli_query($dbcon, $q);
 
         if ($result) {
-          echo "OK";
-          echo "<a href='queue_table.php'>แสดงข้อมูล</a>";
+          echo '<script>alert("เพิ่มข้อมูลคิวเรียบร้อย")</script>';
+          echo '<script>window.location="service_table.php"</script>';
         } else {
           echo "NO".mysqli_error($dbcon);
         }

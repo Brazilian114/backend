@@ -5,8 +5,8 @@
   $result = mysqli_query($dbcon, $q);
 
   if($result){
-    echo "ลบสำเร็จ";
-    echo "<a href='member_table.php'>แสดงข้อมูล</a>";
+    echo '<script>alert("ลบข้อมูลเรียบร้อย")</script>';
+    echo '<script>window.location="mamber_table.php"</script>';
   }else {
     echo "ผิดพลาด".mysqli_error($dbcon);
   }

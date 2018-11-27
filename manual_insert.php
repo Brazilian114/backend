@@ -22,9 +22,10 @@
         $result = mysqli_query($dbcon, $q);
 
         if ($result) {
-          echo "OK";
           
-          echo "alert('เรียบร้อย');";
+          
+          echo '<script>alert("เพิ่มคู่มือดูแลรถเรียบร้อย")</script>';
+          echo '<script>window.location="manual_table.php"</script>';
         } else {
           echo "NO".mysqli_error($dbcon);
         }

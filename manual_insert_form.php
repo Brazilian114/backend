@@ -235,7 +235,7 @@
           <input type="text" name="manual_head" id="manual_head" class="form-control" require="require" placecholder="ชื่อ">
 
           <label>เนื้อหา: </label>
-          <textarea type="text" name="manual_content" id="manual_content" class="form-control" require="require" placecholder="ชื่อ">
+          <textarea type="text" name="manual_content" id="manual_content" class="form-control" style="height: 200px; width:600px;" require="require" placecholder="ชื่อ">
 </textarea>
           <label>ปิดท้าย: </label>
           <input type="text" name="manual_footer" id="manual_footer" class="form-control" require="require" placecholder="ราคา">

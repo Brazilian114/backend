@@ -1,8 +1,17 @@
 <?php
     require 'connectdb.php';
 
+    $ext = pathinfo(basename($_FILES['manual_img']['name']), PATHINFO_EXTENSION);
+    $new_image_name='img_'.uniqid().".".$ext;
+    $image_path ="C:/carpooll - Copy/src/assets/manual/";
+    $upload_path = $image_path.$new_image_name;
+    
+   $success = move_uploaded_file($_FILES['manual_img']['tmp_name'],$upload_path);
+
+
+    $manual_img = $new_image_name;
     $manual_id = $_POST['manual_id'];
-    $manual_img = $_POST['manual_img'];
+    
     $manual_caption = $_POST['manual_caption'];
     $manual_head = $_POST['manual_head'];
     $manual_content = $_POST['manual_content'];

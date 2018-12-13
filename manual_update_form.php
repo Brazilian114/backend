@@ -222,15 +222,15 @@
         <div class="card card-register mx-auto mt-5">
             <div class="card-header">แก้ไขข้อมูล</div>
             <div class="card-body">
-                <form action="service_update.php" method="post" enctype="multipart/form-data" id="form">
+                <form action="manual_update.php" method="post" enctype="multipart/form-data" id="form">
 
-
+ 
 
 
         <label>ภาพประกอบ:     </label><input type="text" name="manual_img" id="manual_img" class="form-control" value="<?php echo $rowservice['manual_img']; ?>">
         <label>คำบรรยายใต้ภาพ: </label><input type="text" name="manual_caption" id="manual_caption" class="form-control" value="<?php echo $rowservice['manual_caption']; ?>">
         <label>หัวข้อ:          </label><input type="text" name="manual_head" id="manual_head" class="form-control" value="<?php echo $rowservice['manual_head']; ?>">
-        <label>เนื้อหา:         </label><input  name="manual_content" id="manual_content" class="form-control" value="<?php echo $rowservice['manual_content']; ?>">
+        <label>เนื้อหา:         </label><textarea  name="manual_content" id="manual_content" class="form-control" style="height: 200px; width:600px;"><?php echo $rowservice['manual_content']; ?></textarea>
         <label>ส่วนท้าย:        </label><input type="text" name="manual_footer" id="manual_footer" class="form-control" value="<?php echo $rowservice['manual_footer']; ?>">
         
        

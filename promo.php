@@ -240,7 +240,7 @@
 
          ?>
          <tr>
-          <td><img src="C:/carpooll - Copy/src/assets/promotion/<?php echo $row['pro_image']; ?>" width="320px" height="180"px></td>
+          <td><img src="images/<?php echo $row['pro_image']; ?>" width="480px" height="180"px></td>
           <td><a href="promo_delete.php?promo_id=<?php echo $row['promo_id']; ?>">ลบ</a></td>
               
           

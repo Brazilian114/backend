@@ -275,7 +275,7 @@
            $Dt = new \DateTime();
            $hour = $Dt->format('H');
            $minute = $Dt->format('i');
-           $second = $Dt->format('s');
+          
            $endHour = '19';
 
 
@@ -284,7 +284,7 @@
 
 
           <?php
-           if($second > 0 || $minute > 0)
+           if( $minute > 0)
            {
               $Dt->setTime($hour, '0', '0');
               $Dt->add(new \DateInterval('PT1H'));
@@ -298,7 +298,7 @@
           <?php
             for ($i= $Dt->format('H'); $i <= $endHour; $i++)
             {
-              echo $Dt->format('H:i:s') . '<option>' . PHP_EOL;
+              echo $Dt->format('H:i') . '<option>' . PHP_EOL;
               $Dt->add(new \DateInterval('PT1H'));
 
             }
@@ -307,21 +307,24 @@
          </option>
          </select>
 
-
+         
 
         <label>บริการ</label>
         <?php
-            $q = "SELECT * FROM booking_service";
+            $q = "SELECT * FROM booking_service join customer on booking_service.car_type_id=customer.car_type
+                           WHERE booking_service.car_type_id=customer.car_type  AND customer.user_id='$quser_id' ORDER BY booking_service.booking_service_id ";
             $result = mysqli_query($dbcon, $q);
          ?>
         <select name="booking_service_id" id="booking_service_id">
-          <option value="">---เลือกบริการ----</option>
+          <option value="">-----------เลือกบริการ----------</option>
           <?php
-                while ($row = mysqli_fetch_array($result, MYSQLI_NUM)){
-                  echo "<option value='$row[0]'>$row[1]</option>";
+                while ($row = mysqli_fetch_array($result)){
+                  echo "<option value='" .$row['booking_service_id']. "'>" . $row['service_name'] ." (ราคา ". $row['service_price']. " บาท) </option>";
                 }
           ?>
         </select>
+
+      
 
 
 

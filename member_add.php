@@ -233,6 +233,19 @@
                   echo "<option value='$row[0]'>$row[1]</option>";
                 }
           ?>
+        </select><br>
+        <label>ขนาดของรถยนต์</label>
+        <?php
+            $q = "SELECT * FROM car_type";
+            $result = mysqli_query($dbcon, $q);
+         ?>
+        <select name="car_type" id="car_type">
+          <option value="">---เลือกขนาดของรถยนต์----</option>
+          <?php
+                while ($row = mysqli_fetch_array($result, MYSQLI_NUM)){
+                  echo "<option value='$row[0]'>$row[1]</option>";
+                }
+          ?>
         </select>
 
 

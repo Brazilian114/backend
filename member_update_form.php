@@ -264,6 +264,30 @@
 
 
         </select>
+        <label>ขนาดของรถยนต์</label>
+        <?php
+            $q = "SELECT * FROM car_type";
+            $result = mysqli_query($dbcon, $q);
+         ?>
+        <select name="car_type_id" id="car_type_id">
+          
+          <?php
+                while ($row = mysqli_fetch_array($result, MYSQLI_NUM)){
+
+                  if ($row[0]==$rowuer['car_type_id']) {
+
+                        echo "<option value='$row[0]' selected>$row[1]</option>";
+                  }  else{
+
+                    echo "<option value='$row[0]'>$row[1]</option>";
+                  }
+
+
+                }
+          ?>
+
+
+        </select>
         
         <label>หมายเลขโทรศัพท์ </label><input type="text" name="tel" id="tel" size="30" value="<?php echo $rowuser['tel'];?>">
 

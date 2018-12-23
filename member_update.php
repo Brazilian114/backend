@@ -2,14 +2,15 @@
        require 'connectdb.php';
         
        
-        
+      $email = $_POST['email'];
       $username = $_POST['username'];
       $license = $_POST['license'];
       $province_id = $_POST['province_id'];
+      $car_type_id = $_POST['car_type_id'];
       $tel = $_POST['tel'];
 
 
-$q = "UPDATE customer SET username='$username', license='$license', province='$province_id', tel='$tel'";
+$q = "UPDATE customer SET email='$email' ,licensze='$license', province='$province_id', car_type='$car_type_id', tel='$tel'";
 
 
     $result = mysqli_query($dbcon, $q);

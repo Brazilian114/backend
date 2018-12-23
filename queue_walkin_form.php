@@ -259,7 +259,7 @@
            $hour = $Dt->format('H');
            $minute = $Dt->format('i');
            $second = $Dt->format('s');
-           $endHour = '19';
+           $endHour = '20';
 
 
           ?>

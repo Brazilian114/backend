@@ -9,11 +9,12 @@
     $license = $_POST['license'];
     $tel = $_POST['tel'];
     $province = $_POST['province'];
+    $car_type = $_POST['car_type'];
 
 
 
-  $q = "INSERT INTO customer (email, password, username, license, tel, province)
-        VALUES ('$email', '$password', '$username', '$license', '$tel', '$province')";
+  $q = "INSERT INTO customer (email, password, username, license, tel, province, car_type)
+        VALUES ('$email', '$password', '$username', '$license', '$tel', '$province', '$car_type')";
 
         $result = mysqli_query($dbcon, $q);
 

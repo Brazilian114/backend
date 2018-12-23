@@ -5,12 +5,16 @@ if(isset($_POST['search']))
     $valueToSearch = $_POST['valueToSearch'];
     // search in all table columns
     // using concat mysql function
-    $query = "SELECT * FROM `customer`INNER JOIN province ON customer.province=province.province_id WHERE CONCAT(`user_id`, `email`, `username`, `license`, `province`, `tel`, `password`) LIKE '%".$valueToSearch."%'" ;
+    $query = "SELECT * FROM `customer`INNER JOIN province ON customer.province=province.province_id
+                                      INNER JOIN car_type ON customer.car_type=car_type.car_type_id
+                                       WHERE CONCAT(`user_id`, `email`, `username`, `license`, `province`, `tel`, `password`, `car_type`) LIKE '%".$valueToSearch."%'" ;
     $search_result = filterTable($query);
     
 }
  else {
-    $query = "SELECT * FROM `customer` INNER JOIN province ON customer.province=province.province_id";
+    $query = "SELECT * FROM `customer` INNER JOIN province ON customer.province=province.province_id
+                                       INNER JOIN car_type ON customer.car_type=car_type.car_type_id"
+    ;
     $search_result = filterTable($query);
 }
 
@@ -262,6 +266,7 @@ function filterTable($query)
                   <th>ทะเบียนรถ</th>
                   <th>จังหวัด</th>
                   <th>โทร</th>
+                  <th>ขนาดของรถยนต์</th>
                   <th>รหัสผ่าน</th>
                   <th>แก้ไข</th>
                   <th>ลบ</th>
@@ -280,6 +285,7 @@ function filterTable($query)
                   <td><?php echo $row['license']; ?></td>
                   <td><?php echo $row['province_name']; ?></td>
                   <td><?php echo $row['tel']; ?></td>
+                  <td><?php echo $row['type_name']; ?></td>
                   <td><?php echo $row['password']; ?></td>
 
                   <td><a href="member_update_form.php?user_id=<?php echo $row['user_id']; ?>">แก้ไข</a></td>
